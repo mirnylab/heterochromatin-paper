@@ -280,6 +280,10 @@ CHROMOSOMES = list(CHROMSIZES[:'chrY'].index)
 BINSIZE = 50_000
 
 COOLER_PATHS = {
+    'HCT116_Unsynchronized': 'downloads/Unsynchronized.hg38.mapq_30.1000.mcool',
+    'HCT116_Unsynchronized_Auxin360mins': 'downloads/Unsynchronized_Auxin360mins.hg38.mapq_30.1000.mcool',
+    'HCT116_5Aza': 'downloads/5Aza.hg38.mapq_30.1000.mcool',  
+    'HCT116_DKO': 'downloads/DKO.hg38.mapq_30.1000.mcool',
     'GM12878_inSitu_MboI': 'downloads/GM12878_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'HMEC_inSitu_MboI': 'downloads/HMEC_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'HUVEC_inSitu_MboI': 'downloads/HUVEC_inSitu_MboI.hg38.mapq_30.1000.mcool',
@@ -287,21 +291,15 @@ COOLER_PATHS = {
     'K562_inSitu_MboI': 'downloads/K562_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'KBM7_inSitu_MboI': 'downloads/KBM7_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'NHEK_inSitu_MboI': 'downloads/NHEK_inSitu_MboI.hg38.mapq_30.1000.mcool',
-    'HCT116_Unsynchronized': 'downloads/Unsynchronized.hg38.mapq_30.1000.mcool',
-    'HCT116_Unsynchronized_Auxin360mins': 'downloads/Unsynchronized_Auxin360mins.hg38.mapq_30.1000.mcool',
-    'HCT116_DKO': 'downloads/DKO.hg38.mapq_30.1000.mcool',
-    'HCT116_5Aza': 'downloads/5Aza.hg38.mapq_30.1000.mcool',
     'H1ESC_FA-DSG-MNase': 'downloads/U54-H1ESC4DN-FA-DSG-MNase__hg38.mapq30.shifted.100.mcool',
-    'HFFc6_FA-DSG-MNase_R1R2': 'downloads/U54-HFFc64DN-FA-DSG-MNase__hg38.mapq30.shifted.100.mcool',
-    'HFFc6_FA-DSG-MNase_R1R3': 'downloads/U54-HFFc6-FA-DSG-MNase-R1-R3.hg38.mapq_30.500.mcool',
+    'HFFc6_FA-DSG-MNase': 'downloads/U54-HFFc6-FA-DSG-MNase-R1-R3.hg38.mapq_30.500.mcool',
 }
 
 BLACKLIST_PATHS = {
-    "HCT116_Unsynchronized": f'data/HCT116.karyotype_blacklist.hg38.{BINSIZE}.bg',
-    "HCT116_Unsynchronized_Auxin360mins": f'data/HCT116.karyotype_blacklist.hg38.{BINSIZE}.bg',
-    "HCT116_Synchronized": f'data/HCT116.karyotype_blacklist.hg38.{BINSIZE}.bg',
-    "HCT116_Synchronized_Auxin360mins": f'data/HCT116.karyotype_blacklist.hg38.{BINSIZE}.bg',
-    "HCT116_5Aza": f'data/HCT116.karyotype_blacklist.hg38.{BINSIZE}.bg',
+    "HCT116_Unsynchronized": f'downloads/HCT116.karyotype_blacklist.hg38.{BINSIZE}.bg',
+    "HCT116_Unsynchronized_Auxin360mins": f'downloads/HCT116.karyotype_blacklist.hg38.{BINSIZE}.bg',
+    "HCT116_5Aza": f'downloads/HCT116.karyotype_blacklist.hg38.{BINSIZE}.bg',
+    # "HCT116_DKO": f'downloads/HCT116.karyotype_blacklist.hg38.{BINSIZE}.bg',
 }
 
 CONDITIONS = [
@@ -309,8 +307,6 @@ CONDITIONS = [
     "HCT116_Unsynchronized_Auxin360mins",
     "HCT116_5Aza",
     "HCT116_DKO",
-    "H1ESC_FA-DSG-MNase",
-    "HFFc6_FA-DSG-MNase_R1R3",
     "GM12878_inSitu_MboI",
     "HMEC_inSitu_MboI",
     "HUVEC_inSitu_MboI",
@@ -318,6 +314,8 @@ CONDITIONS = [
     "K562_inSitu_MboI",
     "KBM7_inSitu_MboI",
     "NHEK_inSitu_MboI",
+    "H1ESC_FA-DSG-MNase",
+    "HFFc6_FA-DSG-MNase",
 ]
 
 for cond in CONDITIONS:
@@ -326,7 +324,7 @@ for cond in CONDITIONS:
 
     # has a header (chrom, start, end, GC)
     ref_track = pd.read_csv(
-        f'data/hg38.bins.gc.{BINSIZE}.bg',
+        f'downloads/hg38.bins.gc.{BINSIZE}.bg',
         sep='\t'
     )
     ref_track = ref_track[ref_track['chrom'].isin(CHROMOSOMES)]

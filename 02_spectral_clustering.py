@@ -420,7 +420,7 @@ CONDITIONS = [
     "HCT116_5Aza",
     "HCT116_DKO",
     "H1ESC_FA-DSG-MNase",
-    "HFFc6_FA-DSG-MNase_R1R3",
+    "HFFc6_FA-DSG-MNase",
     "GM12878_inSitu_MboI",
     "HMEC_inSitu_MboI",
     "HUVEC_inSitu_MboI",
@@ -436,8 +436,7 @@ SORT_KEYS = {
     "HCT116_DKO": 'HCT116_protect',
     "HCT116_Unsynchronized": 'HCT116_protect',
     "HCT116_Unsynchronized_Auxin360mins": 'HCT116_protect',
-    "HFFc6_FA-DSG-MNase_R1R2": 'HFFc6_atac',
-    "HFFc6_FA-DSG-MNase_R1R3": 'HFFc6_atac',
+    "HFFc6_FA-DSG-MNase": 'HFFc6_atac',
     "GM12878_inSitu_MboI": 'GM12878_wgbs',
     "IMR90_inSitu_MboI": 'IMR90_wgbs',
     "K562_inSitu_MboI": 'K562_wgbs',
@@ -460,10 +459,10 @@ for cond in CONDITIONS:
     print(cond)
 
     eigvecs = pd.read_parquet(
-        f'data/eigs/{cond}.hg38.{BINSIZE}.E0-E128.trans.eigvecs.pq'
+        f'results/{cond}.hg38.{BINSIZE}.E0-E128.trans.eigvecs.pq'
     )
     eigvals = pd.read_parquet(
-        f'data/eigs/{cond}.hg38.{BINSIZE}.E0-E128.trans.eigvals.pq',
+        f'results/{cond}.hg38.{BINSIZE}.E0-E128.trans.eigvals.pq',
     ).set_index('eig')
     eigvecs = eigvecs[eigvecs['chrom'].isin(CHROMOSOMES)]
 
