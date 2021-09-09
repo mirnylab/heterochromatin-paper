@@ -523,7 +523,7 @@ for cond in CONDITIONS:
         eignorm = 'eignorm_unity'
 
     out.to_csv(
-        f'{cond}.hg38.{BINSIZE}.clusters.{which}.{eignorm}.tsv',
+        f'results/{cond}.hg38.{BINSIZE}.clusters.{which}.{eignorm}.tsv',
         sep='\t',
         index=False
     )

@@ -285,12 +285,8 @@ COOLER_PATHS = {
     'HCT116_5Aza': 'downloads/5Aza.hg38.mapq_30.1000.mcool',  
     'HCT116_DKO': 'downloads/DKO.hg38.mapq_30.1000.mcool',
     'GM12878_inSitu_MboI': 'downloads/GM12878_inSitu_MboI.hg38.mapq_30.1000.mcool',
-    'HMEC_inSitu_MboI': 'downloads/HMEC_inSitu_MboI.hg38.mapq_30.1000.mcool',
-    'HUVEC_inSitu_MboI': 'downloads/HUVEC_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'IMR90_inSitu_MboI': 'downloads/IMR90_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'K562_inSitu_MboI': 'downloads/K562_inSitu_MboI.hg38.mapq_30.1000.mcool',
-    'KBM7_inSitu_MboI': 'downloads/KBM7_inSitu_MboI.hg38.mapq_30.1000.mcool',
-    'NHEK_inSitu_MboI': 'downloads/NHEK_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'H1ESC_FA-DSG-MNase': 'downloads/U54-H1ESC4DN-FA-DSG-MNase__hg38.mapq30.shifted.100.mcool',
     'HFFc6_FA-DSG-MNase': 'downloads/U54-HFFc6-FA-DSG-MNase-R1-R3.hg38.mapq_30.500.mcool',
 }
@@ -308,12 +304,8 @@ CONDITIONS = [
     "HCT116_5Aza",
     "HCT116_DKO",
     "GM12878_inSitu_MboI",
-    "HMEC_inSitu_MboI",
-    "HUVEC_inSitu_MboI",
     "IMR90_inSitu_MboI",
     "K562_inSitu_MboI",
-    "KBM7_inSitu_MboI",
-    "NHEK_inSitu_MboI",
     "H1ESC_FA-DSG-MNase",
     "HFFc6_FA-DSG-MNase",
 ]
@@ -361,9 +353,9 @@ for cond in CONDITIONS:
     )
 
     eigval_table.to_parquet(
-        f"{cond}.hg38.{BINSIZE}.E0-E{N_EIGS}.trans.eigvals.pq"
+        f"results/{cond}.hg38.{BINSIZE}.E0-E{N_EIGS}.trans.eigvals.pq"
     )
 
     eigvec_table.to_parquet(
-        f"{cond}.hg38.{BINSIZE}.E0-E{N_EIGS}.trans.eigvecs.pq"
+        f"results/{cond}.hg38.{BINSIZE}.E0-E{N_EIGS}.trans.eigvecs.pq"
     )
