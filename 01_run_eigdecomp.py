@@ -315,9 +315,8 @@ for cond in CONDITIONS:
     print(cond)
 
     # has a header (chrom, start, end, GC)
-    ref_track = pd.read_csv(
-        f'downloads/hg38.bins.gc.{BINSIZE}.bg',
-        sep='\t'
+    ref_track = pd.read_table(
+        f'downloads/hg38.bins.gc.{BINSIZE}.tsv',
     )
     ref_track = ref_track[ref_track['chrom'].isin(CHROMOSOMES)]
 
@@ -343,7 +342,7 @@ for cond in CONDITIONS:
         [clr.offset(chrom) for chrom in CHROMOSOMES], clr.extent(CHROMOSOMES[-1])[1]
     ]
 
-    eigval_table, eigvec_table = normalized_affinity_trans_eig(
+    eigval_df, eigvec_df = eig_trans(
         clr=clr,
         bins=ref_track,
         phasing_track_col="GC",
@@ -352,10 +351,10 @@ for cond in CONDITIONS:
         corr_metric=None,
     )
 
-    eigval_table.to_parquet(
+    eigval_df.to_parquet(
         f"results/{cond}.hg38.{BINSIZE}.E0-E{N_EIGS}.trans.eigvals.pq"
     )
 
-    eigvec_table.to_parquet(
+    eigvec_df.to_parquet(
         f"results/{cond}.hg38.{BINSIZE}.E0-E{N_EIGS}.trans.eigvecs.pq"
     )

@@ -432,7 +432,7 @@ SORT_KEYS = {
     "HCT116_DKO": 'HCT116_protect',
     "HCT116_Unsynchronized": 'HCT116_protect',
     "HCT116_Unsynchronized_Auxin360mins": 'HCT116_protect',
-    "H1ESC_FA-DSG-MNase": 'H1_atac',
+    "H1ESC_FA-DSG-MNase": 'H1_wgbs',
     "HFFc6_FA-DSG-MNase": 'HFFc6_atac',
     "GM12878_inSitu_MboI": 'GM12878_wgbs',
     "IMR90_inSitu_MboI": 'IMR90_wgbs',
