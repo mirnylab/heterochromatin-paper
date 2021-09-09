@@ -422,12 +422,8 @@ CONDITIONS = [
     "H1ESC_FA-DSG-MNase",
     "HFFc6_FA-DSG-MNase",
     "GM12878_inSitu_MboI",
-    "HMEC_inSitu_MboI",
-    "HUVEC_inSitu_MboI",
     "IMR90_inSitu_MboI",
     "K562_inSitu_MboI",
-    "KBM7_inSitu_MboI",
-    "NHEK_inSitu_MboI",
 ]
 
 
@@ -436,14 +432,11 @@ SORT_KEYS = {
     "HCT116_DKO": 'HCT116_protect',
     "HCT116_Unsynchronized": 'HCT116_protect',
     "HCT116_Unsynchronized_Auxin360mins": 'HCT116_protect',
+    "H1ESC_FA-DSG-MNase": 'H1_atac',
     "HFFc6_FA-DSG-MNase": 'HFFc6_atac',
     "GM12878_inSitu_MboI": 'GM12878_wgbs',
     "IMR90_inSitu_MboI": 'IMR90_wgbs',
     "K562_inSitu_MboI": 'K562_wgbs',
-    "HMEC_inSitu_MboI": 'GM12878_wgbs',
-    "HUVEC_inSitu_MboI": 'GM12878_wgbs',
-    "KBM7_inSitu_MboI": 'GM12878_wgbs',
-    "NHEK_inSitu_MboI": 'GM12878_wgbs',
 }
 
 
