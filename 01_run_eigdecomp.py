@@ -280,15 +280,15 @@ CHROMOSOMES = list(CHROMSIZES[:'chrY'].index)
 BINSIZE = 50_000
 
 COOLER_PATHS = {
-    'HCT116_Unsynchronized': 'downloads/Unsynchronized.hg38.mapq_30.1000.mcool',
-    'HCT116_Unsynchronized_Auxin360mins': 'downloads/Unsynchronized_Auxin360mins.hg38.mapq_30.1000.mcool',
-    'HCT116_5Aza': 'downloads/5Aza.hg38.mapq_30.1000.mcool',  
-    'HCT116_DKO': 'downloads/DKO.hg38.mapq_30.1000.mcool',
+    'HCT116_Unsynchronized': 'downloads/HCT116_Unsynchronized.hg38.mapq_30.1000.mcool',
+    'HCT116_Unsynchronized_Auxin360mins': 'downloads/HCT116_Unsynchronized_Auxin360mins.hg38.mapq_30.1000.mcool',
+    'HCT116_5Aza': 'downloads/HCT116_5Aza.hg38.mapq_30.1000.mcool',  
+    'HCT116_DKO': 'downloads/HCT116_DKO.hg38.mapq_30.1000.mcool',
     'GM12878_inSitu_MboI': 'downloads/GM12878_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'IMR90_inSitu_MboI': 'downloads/IMR90_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'K562_inSitu_MboI': 'downloads/K562_inSitu_MboI.hg38.mapq_30.1000.mcool',
     'H1ESC_FA-DSG-MNase': 'downloads/U54-H1ESC4DN-FA-DSG-MNase__hg38.mapq30.shifted.100.mcool',
-    'HFFc6_FA-DSG-MNase': 'downloads/U54-HFFc6-FA-DSG-MNase-R1-R3.hg38.mapq_30.500.mcool',
+    'HFFc6_FA-DSG-MNase': 'downloads/U54-HFFc6-FA-DSG-MNase-R1-R3.hg38.mapq_30.shifted.100.mcool',
 }
 
 BLACKLIST_PATHS = {
